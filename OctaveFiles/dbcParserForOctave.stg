@@ -8,6 +8,7 @@ dbcFile.frameAry = repmat(struct,<length(bus.frameAry)>,1);
 renderPdu(pdu) ::= <<
 dbcFile.frameAry(<frame.i>).name = '<pdu.name>';
 dbcFile.frameAry(<frame.i>).id = '<pdu.id>';
+dbcFile.frameAry(<frame.i>).bus = '<pdu.sender>';
 dbcFile.frameAry(<frame.i>).signalAry = repmat(struct,<pdu.noSignals>,1);
 <pdu.signalAry:renderSignal()>
 >>
